@@ -18,7 +18,7 @@ interface OAuthResourceContract
      *
      * @see https://developers.pinterest.com/docs/getting-started/authentication/#Generating%20an%20access%20token
      */
-    public function getAccessCode(): string;
+    public function getAccessCodeLink(): string;
 
     /**
      * Exchange the code for an access token

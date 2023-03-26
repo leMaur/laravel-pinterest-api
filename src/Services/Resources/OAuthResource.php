@@ -47,7 +47,7 @@ class OAuthResource implements OAuthResourceContract
      *
      * @see https://developers.pinterest.com/docs/getting-started/authentication/#Generating%20an%20access%20token
      */
-    public function getAccessCode(): string
+    public function getAccessCodeLink(): string
     {
         $state = Str::random(64);
 
