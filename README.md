@@ -131,7 +131,10 @@ Here an example:
 The package emits `Lemaur\Pinterest\Events\CredentialsRetrieved::class` event within `Lemaur\Pinterest\Data\OAuthData` object when it receives the credentials.
 You can listen for this event in your project and store the credentials where you want.
 
-To do that, you need to create a new listener `php artisan make:listener --event=\\Lemaur\\Pinterest\\Events\\CredentialsRetrieved StorePinterestCredentials` 
+To do that, you need to create a new listener 
+```bash
+php artisan make:listener --event=\\Lemaur\\Pinterest\\Events\\CredentialsRetrieved StorePinterestCredentials
+``` 
 
 And inside the `handle` method you can decide where to store the credentials.
 ```php
