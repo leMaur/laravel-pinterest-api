@@ -30,6 +30,7 @@ trait BuildBaseRequest
         }
 
         return $this->withBaseUrl()
+            ->asJson()
             ->withToken($this->oauth->access_token);
     }
 
