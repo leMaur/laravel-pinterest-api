@@ -99,6 +99,11 @@ You can publish the config file with:
 php artisan vendor:publish --tag="pinterest-api-config"
 ```
 
+You can publish support files with:
+```bash
+php artisan vendor:publish --tag="pinterest-api-support"
+```
+
 <br>
 
 ## Manage credentials

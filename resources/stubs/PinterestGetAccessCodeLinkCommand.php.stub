@@ -1,18 +1,16 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Lemaur\Pinterest\Commands;
+namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Lemaur\Pinterest\Facades\Pinterest;
 
-class PinterestCommand extends Command
+class PinterestGetAccessCodeLinkCommand extends Command
 {
     /**
      * @var string
      */
-    public $signature = 'pinterest:get-access-code-link';
+    protected $signature = 'pinterest:get-access-code-link';
 
     /**
      * @var string
