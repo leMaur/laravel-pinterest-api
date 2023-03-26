@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-pinterest-api` will be documented in this file.
 
+## 0.3.4 - 2023-03-26
+
+**Full Changelog**: https://github.com/leMaur/laravel-pinterest-api/compare/0.3.3...0.3.4
+
 ## 0.3.3 - 2023-03-26
 
 **Full Changelog**: https://github.com/leMaur/laravel-pinterest-api/compare/0.3.2...0.3.3
