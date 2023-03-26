@@ -6,12 +6,12 @@ namespace Lemaur\Pinterest\Services;
 
 use Lemaur\Pinterest\Data\ConfigData;
 use Lemaur\Pinterest\Data\OAuthData;
+use Lemaur\Pinterest\Exceptions\OAuthException;
 use Lemaur\Pinterest\Services\Concerns\BuildBaseRequest;
 use Lemaur\Pinterest\Services\Contracts\PinterestContract;
 use Lemaur\Pinterest\Services\Resources\BoardResource;
 use Lemaur\Pinterest\Services\Resources\OAuthResource;
 use Lemaur\Pinterest\Services\Resources\PinResource;
-use Lemaur\Pinterest\Exceptions\OAuthException;
 
 class Pinterest implements PinterestContract
 {
