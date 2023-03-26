@@ -21,7 +21,7 @@ class PinterestCommand extends Command
 
     public function handle(): int
     {
-        $link = Pinterest::oauth()->getAccessCode();
+        $link = Pinterest::oauth()->getAccessCodeLink();
 
         $this->line('Copy/paste this link into your browser and follow the instructions provided.');
         $this->newLine();
