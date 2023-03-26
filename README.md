@@ -267,33 +267,8 @@ The same for the refresh token `Lemaur\Pinterest\Facades\Pinterest::oauth()->cre
 
 ## Testing
 
-The package offers a nifty fake method to help you write your tests.
-
-Here an example on how to use it:
-```php
-use Illuminate\Http\Client\Request;
-use Lemaur\Pinterest\Enums\ContentTypeEnum;
-use Lemaur\Pinterest\Facades\Pinterest;
-
-Pinterest::fake();
-
-Pinterest::pin()->create(
-    boardId: 'abc123',
-    mediaSource: new ImageBase64Data(ContentTypeEnum::JPEG, 'image-base64-format...')
-);
-
-Pinterst::assertSent(function (Request $request) {
-    return $request->url() == config('pinterest.base_url').'pins' &&
-           $request['boardId'] == 'abc123' &&
-           $request['mediaSource'] == [
-               'source_type' => 'image_base64',
-               'content_type' => 'image/jpeg',
-               'data' => 'image-base64-format...',
-           ];
-});
-```
-
-Here listed you can find the all assertion methods it offers:
+The package offers a nifty fake method to help you write your tests.  
+If you want some examples, I suggest to look at [the package test suite](https://github.com/leMaur/laravel-pinterest-api/tree/main/tests). 
 
 ```php
 Pinterst::assertSent(callable $callback): void
