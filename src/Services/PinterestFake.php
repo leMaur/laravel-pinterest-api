@@ -7,6 +7,7 @@ namespace Lemaur\Pinterest\Services;
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\ResponseSequence;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class PinterestFake
 {
@@ -17,7 +18,7 @@ class PinterestFake
         Http::preventStrayRequests();
 
         Http::fake([
-            $this->service->config->base_url => $this->response ?? Http::response([]),
+            Str::finish($this->service->config->base_url, '/').'*' => $this->response ?? Http::response([]),
         ]);
     }
 
