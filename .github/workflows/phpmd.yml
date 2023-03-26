@@ -1,0 +1,41 @@
+name: PHPMD
+
+on:
+  push:
+    branches:
+      - main
+
+  schedule:
+    - cron: '31 6 * * 0'
+
+permissions:
+  contents: read
+
+jobs:
+  phpmd:
+    name: Run PHPMD scanning
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          tools: phpmd
+
+      - name: Run PHPMD
+        run: phpmd . sarif codesize --reportfile phpmd-results.sarif
+        continue-on-error: true
+
+      - name: Upload analysis results to GitHub
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: phpmd-results.sarif
+          wait-for-processing: true

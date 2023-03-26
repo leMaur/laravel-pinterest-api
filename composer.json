@@ -1,0 +1,74 @@
+{
+    "name": "lemaur/laravel-pinterest-api",
+    "description": "",
+    "keywords": [
+        "lemaur",
+        "laravel",
+        "pinterest",
+        "api",
+        "v5"
+    ],
+    "homepage": "https://github.com/lemaur/laravel-pinterest-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maurizio",
+            "email": "hello@lemaur.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.5",
+        "illuminate/contracts": "^9.0|^10.0",
+        "spatie/laravel-package-tools": "^1.14.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^6.0|^7.0",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lemaur\\Pinterest\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lemaur\\Pinterest\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=2G",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lemaur\\Pinterest\\PinterestServiceProvider"
+            ],
+            "aliases": {
+                "Pinterest": "Lemaur\\Pinterest\\Facades\\Pinterest"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

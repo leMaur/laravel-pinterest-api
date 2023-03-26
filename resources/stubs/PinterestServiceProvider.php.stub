@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
+use Lemaur\Pinterest\Data\ConfigData;
+use Lemaur\Pinterest\Data\OAuthData;
+use Lemaur\Pinterest\Services\Contracts\PinterestContract;
+use Lemaur\Pinterest\Services\Pinterest as PinterestService;
+
+class PinterestServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     */
+    public function register(): void
+    {
+        $this->app->singleton(PinterestContract::class, fn (Application $app) => new PinterestService(
+            config: ConfigData::fromConfig($app['config']['pinterest']),
+            oauth: OAuthData::from([]), // @TODO: <-- please fill in the credentials...
+        ));
+    }
+
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        //
+    }
+}
