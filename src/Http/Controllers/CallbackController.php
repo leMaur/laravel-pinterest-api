@@ -14,8 +14,8 @@ class CallbackController
     public function __invoke(Request $request): Response
     {
         return app(CallbackResponseContract::class)(
-            accessCode: (string) $request->query('code'),
-            state: $request->query('state'),
+            accessCode: (string) $request->query('code', ''),
+            state: (string) $request->query('state', ''),
             internalState: Cache::pull('pinterest_api::oauth_state')
         );
     }

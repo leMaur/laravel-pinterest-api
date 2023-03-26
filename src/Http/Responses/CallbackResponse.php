@@ -13,6 +13,10 @@ class CallbackResponse implements CallbackResponseContract
 {
     public function __invoke(string $accessCode, string $state, ?string $internalState): Response
     {
+        if (blank($state)) {
+            abort(Response::HTTP_NOT_FOUND);
+        }
+
         if ($internalState === null) {
             return new Response(
                 content: 'Your request has expired! Please try again by running `php artisan pinterest:generate-access-code-link`.',
@@ -21,10 +25,9 @@ class CallbackResponse implements CallbackResponseContract
         }
 
         if ($state !== $internalState) {
-            return new Response(
-                content: 'Not good! Request has been tampered!',
-                status: Response::HTTP_FORBIDDEN
-            );
+            report('Pinterest callback request has been tampered!');
+
+            abort(Response::HTTP_NOT_FOUND);
         }
 
         event(new CredentialsRetrieved(OAuthData::from(['access_code' => $accessCode])));
