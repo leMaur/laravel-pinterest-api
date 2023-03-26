@@ -17,7 +17,7 @@ class MultipleImageUrlsData extends MediaSourceData
         public readonly array $items,
         public readonly int $index,
     ) {
-        parent::__construct(source_type: 'multiple_image_base_64');
+        parent::__construct(source_type: 'multiple_image_urls');
 
         Validator::make(
             data: ['index' => $this->index],
