@@ -89,19 +89,14 @@ If so, it would be great if you wanted [sponsor me](https://github.com/sponsors/
 
 ## Installation
 
-You can install the package via composer:
+You can require the package via composer:
 ```bash
 composer require lemaur/laravel-pinterest-api
 ```
 
-You can publish the config file with:
+You can install it with:
 ```bash
-php artisan vendor:publish --tag="pinterest-api-config"
-```
-
-You can publish support files with:
-```bash
-php artisan vendor:publish --tag="pinterest-api-support"
+php artisan pinterest-api:install
 ```
 
 <br>
@@ -183,12 +178,8 @@ protected $listen = [
 ];
 ```
 
-Now it's time to publish the service provider:
-```bash
-php artisan vendor:publish --tag="pinterest-api-provider"
-```
-
-Inside the `register` method you will find a predefined implementation. 
+Now it's time to edit the service provider.
+Open `App\Providers\PinterestServiceProvider`, and inside the `register` method you will find a predefined implementation. 
 
 As you can see in the `@TODO` comment, here is where you should pass the credentials you previously stored.  
 ```php

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Console\Commands;
+declare(strict_types=1);
+
+namespace Lemaur\Pinterest\Commands;
 
 use Illuminate\Console\Command;
 use Lemaur\Pinterest\Facades\Pinterest;
@@ -15,7 +17,7 @@ class PinterestGetAccessCodeLinkCommand extends Command
     /**
      * @var string
      */
-    public $description = "Generate the link to get the Pinterest's access code.";
+    protected $description = "Generate the link to get the Pinterest's access code.";
 
     public function handle(): int
     {
