@@ -14,7 +14,7 @@ trait InteractsWithPublicProperties
     {
         return collect(json_decode(
             json: collect((new ReflectionClass(static::class))->getProperties(ReflectionProperty::IS_PUBLIC))
-                ->mapWithKeys(fn(ReflectionProperty $property): array => [
+                ->mapWithKeys(fn (ReflectionProperty $property): array => [
                     $property->getName() => $this->{$property->getName()},
                 ])->toJson(),
             associative: true

@@ -15,7 +15,6 @@ use Lemaur\Pinterest\Facades\Pinterest;
 use Lemaur\Pinterest\Services\Resources\PinResource;
 
 it('creates pin with image base 64 media source', function (): void {
-
     Pinterest::fake();
 
     $data = base64_encode('valid-base64-image-data');
@@ -37,13 +36,12 @@ it('creates pin with image base 64 media source', function (): void {
             && $request->data()['media_source'] === [
                 'content_type' => 'image/jpeg',
                 'data' => $data,
-                'source_type' => 'image_base64'
+                'source_type' => 'image_base64',
             ];
     });
 });
 
 it('creates pin with image url media source', function (): void {
-
     Pinterest::fake();
 
     Pinterest::pin()->create(
@@ -61,13 +59,12 @@ it('creates pin with image url media source', function (): void {
             && $request->data()['board_id'] === 'abc123'
             && $request->data()['media_source'] === [
                 'url' => 'valid-image-url',
-                'source_type' => 'image_url'
+                'source_type' => 'image_url',
             ];
     });
 });
 
 it('creates pin with video id media source', function (): void {
-
     Pinterest::fake();
 
     Pinterest::pin()->create(
@@ -87,13 +84,12 @@ it('creates pin with video id media source', function (): void {
             && $request->data()['media_source'] === [
                 'cover_image_url' => 'valid-cover-image-url',
                 'media_id' => 'valid-media-id',
-                'source_type' => 'video_id'
+                'source_type' => 'video_id',
             ];
     });
 });
 
 it('creates pin with multiple image base 64 media source', function (): void {
-
     Pinterest::fake();
 
     $data = [];
@@ -109,7 +105,7 @@ it('creates pin with multiple image base 64 media source', function (): void {
                 new MediaBase64ItemData(
                     content_type: ContentTypeEnum::JPEG,
                     data: $data[] = base64_encode('valid-base64-image-data-2'),
-                )
+                ),
             ],
             index: 2,
         ),
@@ -139,13 +135,12 @@ it('creates pin with multiple image base 64 media source', function (): void {
                     ],
                 ],
                 'index' => 2,
-                'source_type' => 'multiple_image_base64'
+                'source_type' => 'multiple_image_base64',
             ];
     });
 });
 
 it('creates pin with multiple image url media source', function (): void {
-
     Pinterest::fake();
 
     $url = [];
@@ -159,7 +154,7 @@ it('creates pin with multiple image url media source', function (): void {
                 ),
                 new MediaUrlItemData(
                     url: $url[] = 'valid-image-url-2',
-                )
+                ),
             ],
             index: 2,
         ),
@@ -187,7 +182,7 @@ it('creates pin with multiple image url media source', function (): void {
                     ],
                 ],
                 'index' => 2,
-                'source_type' => 'multiple_image_urls'
+                'source_type' => 'multiple_image_urls',
             ];
     });
 });

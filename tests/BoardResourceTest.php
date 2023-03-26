@@ -14,8 +14,7 @@ it('lists all boards', function (): void {
     Pinterest::assertSentCount(1);
 
     Pinterest::assertSent(function (Request $request) {
-        return $request->url() === $this->baseUrl. BoardResource::ENDPOINT
+        return $request->url() === $this->baseUrl.BoardResource::ENDPOINT
             && $request->method() === 'GET';
     });
-
 });
