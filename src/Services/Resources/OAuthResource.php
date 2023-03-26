@@ -32,9 +32,6 @@ class OAuthResource implements OAuthResourceContract
         private readonly ConfigData $config,
         private readonly OAuthData $oauth,
     ) {
-        if (! $this->oauth->access_code || ! $this->oauth->refresh_token) {
-            throw new OAuthException("Unable to find Pinterest credentials. Please, check App\Providers\PinterestServiceProvider configuration.");
-        }
     }
 
     public function credentials(): OAuthData
@@ -70,9 +67,14 @@ class OAuthResource implements OAuthResourceContract
      * @see https://developers.pinterest.com/docs/getting-started/authentication/#3.%20Exchange%20the%20code%20for%20an%20access%20token
      *
      * @throws RequestException
+     * @throws OAuthException
      */
     public function requestAccessToken(): array
     {
+        if (! $this->oauth->access_code) {
+            throw new OAuthException("Unable to find Pinterest access code.");
+        }
+
         $response = $this->service
             ->buildRequestWithBasicBase64()
             ->post(self::ENDPOINT, [
@@ -97,6 +99,10 @@ class OAuthResource implements OAuthResourceContract
      */
     public function refreshAccessToken(): array
     {
+        if (! $this->oauth->refresh_token) {
+            throw new OAuthException("Unable to find Pinterest refresh token.");
+        }
+
         $response = $this->service
             ->buildRequestWithBasicBase64()
             ->post(self::ENDPOINT, [
