@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lemaur/laravel-pinterest-api.svg?style=flat-square)](https://packagist.org/packages/lemaur/laravel-pinterest-api)
 [![Total Downloads](https://img.shields.io/packagist/dt/lemaur/laravel-pinterest-api.svg?style=flat-square)](https://packagist.org/packages/lemaur/laravel-pinterest-api)
-[![License](https://img.shields.io/packagist/l/lemaur/laravel-pinterest-api.svg?style=flat-square&color=yellow)](https://github.com/leMaur/laravel-pinterest-api/blob/master/LICENSE.md)
+[![License](https://img.shields.io/packagist/l/lemaur/laravel-pinterest-api.svg?style=flat-square&color=yellow)](https://github.com/leMaur/laravel-pinterest-api/blob/main/LICENSE.md)
 [![Tests](https://img.shields.io/github/actions/workflow/status/lemaur/laravel-pinterest-api/run-tests.yml?label=tests&style=flat-square)](https://github.com/leMaur/laravel-pinterest-api/actions/workflows/run-tests.yml)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/lemaur?style=flat-square&color=ea4aaa)](https://github.com/sponsors/leMaur)
 [![Trees](https://img.shields.io/badge/dynamic/json?color=yellowgreen&style=flat-square&label=Trees&query=%24.total&url=https%3A%2F%2Fpublic.offset.earth%2Fusers%2Flemaur%2Ftrees)](https://ecologi.com/lemaur?r=6012e849de97da001ddfd6c9)
