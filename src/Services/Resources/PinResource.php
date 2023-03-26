@@ -10,8 +10,8 @@ use Lemaur\Pinterest\Data\MediaSource\ImageUrlData;
 use Lemaur\Pinterest\Data\MediaSource\MultipleImageBase64Data;
 use Lemaur\Pinterest\Data\MediaSource\MultipleImageUrlsData;
 use Lemaur\Pinterest\Data\MediaSource\VideoIdData;
-use Lemaur\Pinterest\Services\Pinterest;
 use Lemaur\Pinterest\Exceptions\OAuthException;
+use Lemaur\Pinterest\Services\Pinterest;
 use RuntimeException;
 
 class PinResource
