@@ -35,7 +35,7 @@ class PinterestServiceProvider extends PackageServiceProvider
         parent::packageBooted();
 
         $this->publishes([
-                $this->package->basePath("/../resources/stubs/PinterestGetAccessCodeLink.php.stub") => base_path("app/Console/Commands/PinterestGetAccessCodeLink.php"),
-            ], "{$this->package->shortName()}-support");
+            $this->package->basePath('/../resources/stubs/PinterestGetAccessCodeLink.php.stub') => base_path('app/Console/Commands/PinterestGetAccessCodeLink.php'),
+        ], "{$this->package->shortName()}-support");
     }
 }
