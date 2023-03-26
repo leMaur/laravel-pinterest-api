@@ -21,7 +21,7 @@ class ImageBase64Data extends MediaSourceData
 
         Validator::make(
             data: ['data' => $this->data],
-            rules: ['data' => 'regex:[a-zA-Z0-9+\/=]+']
+            rules: ['data' => 'regex:/[a-zA-Z0-9+\/=]+/i']
         )->validate();
     }
 }
