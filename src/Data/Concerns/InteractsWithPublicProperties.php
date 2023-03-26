@@ -12,11 +12,12 @@ trait InteractsWithPublicProperties
 {
     private function getPublicProperties(): Collection
     {
-        return collect(
-            (new ReflectionClass(static::class))->getProperties(ReflectionProperty::IS_PUBLIC)
-        )
-            ->mapWithKeys(fn (ReflectionProperty $property): array => [
-                $property->getName() => $this->{$property->getName()},
-            ]);
+        return collect(json_decode(
+            json: collect((new ReflectionClass(static::class))->getProperties(ReflectionProperty::IS_PUBLIC))
+                ->mapWithKeys(fn(ReflectionProperty $property): array => [
+                    $property->getName() => $this->{$property->getName()},
+                ])->toJson(),
+            associative: true
+        ));
     }
 }
