@@ -72,7 +72,7 @@ class OAuthResource implements OAuthResourceContract
     public function requestAccessToken(): array
     {
         if (! $this->oauth->access_code) {
-            throw new OAuthException("Unable to find Pinterest access code.");
+            throw new OAuthException('Unable to find Pinterest access code.');
         }
 
         $response = $this->service
@@ -100,7 +100,7 @@ class OAuthResource implements OAuthResourceContract
     public function refreshAccessToken(): array
     {
         if (! $this->oauth->refresh_token) {
-            throw new OAuthException("Unable to find Pinterest refresh token.");
+            throw new OAuthException('Unable to find Pinterest refresh token.');
         }
 
         $response = $this->service
