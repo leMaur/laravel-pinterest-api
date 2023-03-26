@@ -11,9 +11,9 @@ use Illuminate\Support\Str;
 use Lemaur\Pinterest\Data\ConfigData;
 use Lemaur\Pinterest\Data\OAuthData;
 use Lemaur\Pinterest\Events\CredentialsRetrieved;
+use Lemaur\Pinterest\Exceptions\OAuthException;
 use Lemaur\Pinterest\Services\Pinterest;
 use Lemaur\Pinterest\Services\Resources\Contracts\OAuthResourceContract;
-use OAuthException;
 
 /**
  * Pinterest's authentication flow

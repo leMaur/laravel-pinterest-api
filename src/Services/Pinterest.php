@@ -11,7 +11,7 @@ use Lemaur\Pinterest\Services\Contracts\PinterestContract;
 use Lemaur\Pinterest\Services\Resources\BoardResource;
 use Lemaur\Pinterest\Services\Resources\OAuthResource;
 use Lemaur\Pinterest\Services\Resources\PinResource;
-use OAuthException;
+use Lemaur\Pinterest\Exceptions\OAuthException;
 
 class Pinterest implements PinterestContract
 {

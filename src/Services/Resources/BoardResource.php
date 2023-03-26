@@ -7,7 +7,7 @@ namespace Lemaur\Pinterest\Services\Resources;
 use Illuminate\Http\Client\RequestException;
 use Lemaur\Pinterest\Enums\PrivacyEnum;
 use Lemaur\Pinterest\Services\Pinterest;
-use OAuthException;
+use Lemaur\Pinterest\Exceptions\OAuthException;
 use RuntimeException;
 
 class BoardResource

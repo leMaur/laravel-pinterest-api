@@ -11,7 +11,7 @@ use Lemaur\Pinterest\Data\MediaSource\MultipleImageBase64Data;
 use Lemaur\Pinterest\Data\MediaSource\MultipleImageUrlsData;
 use Lemaur\Pinterest\Data\MediaSource\VideoIdData;
 use Lemaur\Pinterest\Services\Pinterest;
-use OAuthException;
+use Lemaur\Pinterest\Exceptions\OAuthException;
 use RuntimeException;
 
 class PinResource

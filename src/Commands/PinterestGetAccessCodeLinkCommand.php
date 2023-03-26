@@ -12,7 +12,7 @@ class PinterestGetAccessCodeLinkCommand extends Command
     /**
      * @var string
      */
-    protected $signature = 'pinterest:get-access-code-link';
+    protected $signature = 'pinterest-api:get-access-code-link';
 
     /**
      * @var string

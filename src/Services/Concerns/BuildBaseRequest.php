@@ -7,7 +7,7 @@ namespace Lemaur\Pinterest\Services\Concerns;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Http;
-use OAuthException;
+use Lemaur\Pinterest\Exceptions\OAuthException;
 
 trait BuildBaseRequest
 {
