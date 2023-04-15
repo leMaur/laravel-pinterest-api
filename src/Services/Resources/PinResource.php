@@ -78,9 +78,29 @@ class PinResource
         throw new RuntimeException('Not implemented yet.');
     }
 
-    public function delete(): bool
+    /**
+     * Delete a Pins owned by the "operation user_account"
+     *
+     * @ratelimit-category org_write
+     *
+     * @authorizations boards:read, boards:write, pins:read, pins:write
+     *
+     * @see https://developers.pinterest.com/docs/api/v5/#operation/pins/delete
+     *
+     * @throws OAuthException
+     * @throws RequestException
+     */
+    public function delete(string $pinId, ?int $accountId = null): bool
     {
-        throw new RuntimeException('Not implemented yet.');
+        $endpoint = ($accountId !== null)
+            ? self::ENDPOINT.'/'.$pinId.'?'.http_build_query(['ad_account_id' => $accountId])
+            : self::ENDPOINT.'/'.$pinId;
+
+        return $this->service
+            ->buildRequestWithToken()
+            ->delete($endpoint)
+            ->throw()
+            ->noContent();
     }
 
     public function update(): array

@@ -47,7 +47,7 @@ If so, it would be great if you wanted [sponsor me](https://github.com/sponsors/
     - [ ] list
     - [x] create
     - [ ] get
-    - [ ] delete
+    - [x] delete
     - [ ] update
     - [ ] save
     - [ ] analytics

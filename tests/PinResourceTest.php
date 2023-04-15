@@ -186,3 +186,18 @@ it('creates pin with multiple image url media source', function (): void {
             ];
     });
 });
+
+it('deletes pin', function (): void {
+    Pinterest::fake();
+
+    Pinterest::pin()->delete(
+        pinId: 'pin-abc123'
+    );
+
+    Pinterest::assertSentCount(1);
+
+    Pinterest::assertSent(function (Request $request) {
+        return $request->url() === $this->baseUrl.PinResource::ENDPOINT.'/pin-abc123'
+            && $request->method() === 'DELETE';
+    });
+});
