@@ -201,3 +201,22 @@ it('deletes pin', function (): void {
             && $request->method() === 'DELETE';
     });
 });
+
+it('updates pin', function (): void {
+    Pinterest::fake();
+
+    Pinterest::pin()->update(
+        pinId: 'pin-abc123',
+        title: 'New Title',
+        description: 'New Description'
+    );
+
+    Pinterest::assertSentCount(1);
+
+    Pinterest::assertSent(function (Request $request) {
+        return $request->url() === $this->baseUrl.PinResource::ENDPOINT.'/pin-abc123'
+            && $request->method() === 'PATCH'
+            && $request->data()['title'] === 'New Title'
+            && $request->data()['description'] === 'New Description';
+    });
+});
