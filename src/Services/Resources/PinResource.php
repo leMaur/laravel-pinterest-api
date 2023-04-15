@@ -124,8 +124,7 @@ class PinResource
         ?string $link = null,
         ?string $altText = null,
         ?int $accountId = null
-    ): array
-    {
+    ): array {
         $endpoint = ($accountId !== null)
             ? self::ENDPOINT.'/'.$pinId.'?'.http_build_query(['ad_account_id' => $accountId])
             : self::ENDPOINT.'/'.$pinId;
