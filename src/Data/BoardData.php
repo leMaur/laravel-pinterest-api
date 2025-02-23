@@ -16,8 +16,7 @@ class BoardData extends Data
         public readonly string $description,
         public readonly PrivacyEnum $privacy,
         public readonly ?string $cover_image = null,
-    ) {
-    }
+    ) {}
 
     public static function fromApi(array $data): self
     {

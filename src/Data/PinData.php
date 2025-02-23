@@ -15,8 +15,7 @@ class PinData extends Data
         public readonly string $title,
         public readonly string $description,
         public readonly string $link,
-    ) {
-    }
+    ) {}
 
     public static function fromApi(array $data): self
     {

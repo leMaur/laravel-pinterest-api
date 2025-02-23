@@ -20,8 +20,7 @@ class Pinterest implements PinterestContract
     public function __construct(
         public readonly ConfigData $config,
         public readonly OAuthData $oauth,
-    ) {
-    }
+    ) {}
 
     /**
      * @throws OAuthException

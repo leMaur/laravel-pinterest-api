@@ -20,8 +20,7 @@ class PinResource
 
     public function __construct(
         private readonly Pinterest $service,
-    ) {
-    }
+    ) {}
 
     public function list()
     {
