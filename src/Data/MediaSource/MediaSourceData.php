@@ -15,6 +15,5 @@ abstract class MediaSourceData implements MediaSourceContract
 
     public function __construct(
         public string $source_type,
-    ) {
-    }
+    ) {}
 }

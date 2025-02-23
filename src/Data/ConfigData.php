@@ -20,8 +20,7 @@ class ConfigData extends Data
         public readonly int $retry_times,
         public readonly int $retry_sleep,
         public readonly array $scopes
-    ) {
-    }
+    ) {}
 
     public static function fromConfig(array $data): self
     {
