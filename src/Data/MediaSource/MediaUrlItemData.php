@@ -13,6 +13,5 @@ class MediaUrlItemData extends Data
         public readonly ?string $title = null,
         public readonly ?string $description = null,
         public readonly ?string $link = null,
-    ) {
-    }
+    ) {}
 }

@@ -6,6 +6,4 @@ namespace Lemaur\Pinterest\Exceptions;
 
 use Exception;
 
-class OAuthException extends Exception
-{
-}
+class OAuthException extends Exception {}

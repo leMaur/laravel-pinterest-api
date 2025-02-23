@@ -31,8 +31,7 @@ class OAuthResource implements OAuthResourceContract
         private readonly Pinterest $service,
         private readonly ConfigData $config,
         private readonly OAuthData $oauth,
-    ) {
-    }
+    ) {}
 
     public function credentials(): OAuthData
     {

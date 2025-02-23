@@ -17,20 +17,19 @@ class OAuthData extends Data
         public readonly ?string $refresh_token = null,
         public readonly ?Carbon $access_token_expired_at = null,
         public readonly ?Carbon $refresh_token_expired_at = null,
-    ) {
-    }
+    ) {}
 
     public function missingAccessToken(): bool
     {
         return blank($this->access_token);
     }
 
-    public function isAccessTokenExpired(): bool|null
+    public function isAccessTokenExpired(): ?bool
     {
         return $this->access_token_expired_at?->isPast();
     }
 
-    public function isRefreshTokenExpired(): bool|null
+    public function isRefreshTokenExpired(): ?bool
     {
         return $this->refresh_token_expired_at?->isPast();
     }

@@ -16,8 +16,7 @@ class BoardResource
 
     public function __construct(
         private readonly Pinterest $service,
-    ) {
-    }
+    ) {}
 
     /**
      * Get a list of the boards owned by the "operation user_account"

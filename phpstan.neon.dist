@@ -7,8 +7,5 @@ parameters:
         - src
         - config
         - routes
-    tmpDir: build/phpstan
-    checkOctaneCompatibility: true
-    checkModelProperties: true
-    checkMissingIterableValueType: false
 
+    tmpDir: build/phpstan

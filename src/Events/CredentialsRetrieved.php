@@ -13,6 +13,5 @@ class CredentialsRetrieved
 
     public function __construct(
         public readonly OAuthData $oauth,
-    ) {
-    }
+    ) {}
 }
