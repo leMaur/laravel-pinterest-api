@@ -9,5 +9,3 @@ parameters:
         - routes
 
     tmpDir: build/phpstan
-    checkMissingIterableValueType: false
-
